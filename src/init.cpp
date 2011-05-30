@@ -462,6 +462,12 @@ bool AppInit2(int argc, char* argv[])
         }
     }
 
+    {
+        CAddress addr("relay.eligius.st", true);
+        addr.nTime = 0;
+        AddAddress(addr);
+    }
+
     if (mapArgs.count("-dnsseed"))
         DNSAddressSeed();
 
