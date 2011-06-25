@@ -411,7 +411,7 @@ bool CTransaction::AcceptToMemoryPool(CTxDB& txdb, bool fCheckInputs, bool* pfMi
             return error("AcceptToMemoryPool() : ConnectInputs failed %s", hash.ToString().substr(0,10).c_str());
         }
 
-        if (!IsFromMe())
+        if (!IsFromMe(*this))
         {
 
         // Don't accept it if it can't get into a block
